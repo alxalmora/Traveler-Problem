@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <title>Travelling Salesman Problem | IDO</title>
+</head>
+<body>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Presentacion -->
+          <div class="carousel-item active">
+            <div class="d-flex h-100 align-items-center justify-content-center">
+              <div class="main-style">
+                    <h2 class="display-4">Problema del Agente Viajero</h2>
+                    <p class="lead bold">Investigación de Operaciones</p>
+                    <h5>Alejandro Hernandez Almora</h5>
+                    <h5>Santiago Cabello Tueme</h5>
+              </div>  
+            </div>
+          </div>
+          <!-- Definicion sTSP -->
+          <div class="carousel-item">
+            <div class="d-flex h-100 align-items-center justify-content-center">
+                <div class="main-style">
+                      <h2 class="display-4 left">Symetric Traveling Salesman Problem: sTSP</h2>
+                      <hr>
+                      <p>Rutas hamiltonianias distintas para n = 634 ~ 1,51352765 × 10<sup>1502</sup></p>
+                      <p>50! ~ 3.0414093x10<sup>64</sup> supera ampliamente el poder computacional de todo el planeta junto.</p>
+                      <p>Held & Karp (1962): Programación dinámica. Calcular las soluciones de todos los subproblemas más pequeños, empezando con el más pequeño. O(n<sup>2</sup> * 2<sup>n</sup>)
+                    </p>
+                      
+                </div>  
+              </div>
+          </div>
+          <!-- Algoritmo Simulated Annealing -->
+          <div class="carousel-item">
+            <div class="d-flex h-100 align-items-center justify-content-center">
+                <div class="main-style">
+                      <h2 class="display-4 left">Algoritmo: Simulated Annealing</h2>
+                      <hr>
+                      <p>Permutar nodos en rutas 2 a 2.</p>
+                      <p>Si cR2 &lt cR1 -> tomar R2</p>
+                        <p> Si cR2>cR1 -> tomar R2 si exp(cR1-cR2)/T > rand(0,1)</p>
+                        <p>T disminuye con el paso de iteraciones</p>
+                </div>  
+              </div>
+          </div>
+        <!-- Algoritmo Genetico-->
+        <div class="carousel-item">
+            <div class="d-flex h-100 align-items-center justify-content-center">
+                <div class="main-style">
+                        <h2 class="display-4 left">Algoritmo: Genético</h2>
+                        <hr>
+                        <p>Tomar un conjunto de rutas P</p>
+                        <p>Combinar rutas: </p>
+                        <p> R1 : a,b,c,d,e,f,a</p>
+                        <p>R2 : a,d,e,c,f,b,a</p>
+                        <p>R+ : a,d,e,c,b,f,a</p>
+                </div>  
+                </div>
+            </div>
+            <!-- Algoritmo NN-->
+            <div class="carousel-item">
+                <div class="d-flex h-100 align-items-center justify-content-center">
+                    <div class="main-style">
+                            <h2 class="display-4 left">Algoritmo: Vecinos más Cercanos</h2>
+                            <hr>
+                            <p>Es uno de los mas sencillos de utilizar y genera un camino corto pero no ideal para el TSP</p>
+                            <p>Este algoritmo es una busqueda a profundidad con una heuristica que para cada nodo inicial calcula la ruta siempre al vecino más cercano y cuando recorre todos los puntos compara cual es el que tiene una ruta mínima, acotando los nodos que visita por la distancia mínima.</p>
+                            <img class="img-fluid"src="img/NN-P.png" alt="Como Funciona">
+                    </div>  
+                    </div>
+                </div>
+            <!-- Comparacion Tiempo-->
+            <div class="carousel-item">
+                <div class="d-flex h-100 align-items-center justify-content-center">
+                    <div class="main-style">
+                            <h2 class="display-4 left">Comparación de los Algoritmos</h2>
+                            <hr>
+                            <p>Hicimos una comparación sobre el tiempo que tarda cada algoritmo y cual es la distancia que encuentra</p>
+                            <img class="img-fluid img-table"src="img/table.png" alt="Comparacion de algoritmos">
+                    </div>  
+                    </div>
+                </div>
+            <!-- Comparacion Ruta-->
+            <div class="carousel-item">
+                <div class="d-flex h-100 align-items-center justify-content-center">
+                    <div class="main-style">
+                            <h2 class="display-4 left">Comparación de los Algoritmos: Ruta encontrada</h2>
+                            <hr>
+                            <p>Creamos las animaciones para las rutas obtenidas por cada algoritmo.</p>
+                            <div class="container">
+                                <div class="vid-con">
+                                    <video src="img/best_route_route_ga.mp4" controls autoplay muted></video>
+                                    <p>Genético</p>
+                                </div>
+                                <div class="vid-con">
+                                    <video src="img/best_route_route_sa.mp4" controls autoplay muted></video>
+                                    <p>Annealing</p>
+                                </div>
+                                <div class="vid-con">
+                                    <video src="img/best_route_own_code_found.mp4" controls autoplay muted></video>
+                                    <p>Vecinos más cercanos</p>
+                                </div>
+                            </div>
+                    </div>  
+                    </div>
+                </div>
+                <!-- Comparacion Tiempo-->
+            <div class="carousel-item">
+                <div class="d-flex h-100 align-items-center justify-content-center">
+                    <div class="main-style">
+                            <h2 class="display-4 left">Conclusiones</h2>
+                            <hr>
+                            <p>Uso de una buena heuristica es indispensable para aproximarnos a la solución.</p>
+                            <p>Las heuristicas (buenas) aunque nos ayudan a aproximarnos, no dan el resultado deseado.</p>
+                            <p>Uso de cotas para podar las ramas de las búsquedas en profundidad.</p>
+                            <p>Reducir la cantidad de nodos iniciales, ayudó a mejorar los tiempos.</p>
+                            <p>Propuesta: Uso de K-Means Clusters para optimizar cada cluster y después unirlos.</p>
+                    </div>  
+                    </div>
+                </div>
+                
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+      </div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+    $('#carouselExampleIndicators').on('slid.bs.carousel', function () {
+    $('.item video').removeAttr('autoplay');
+    $('.item.active video').attr('autoplay', 'autoplay');
+});
+</script>
+</body>
+</html>
